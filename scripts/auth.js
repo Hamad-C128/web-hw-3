@@ -14,6 +14,11 @@ document.querySelector('button').addEventListener('click', (e) => {
     //sign up user
     firebase.auth().createUserWithEmailAndPassword(inputv, inputvl).then(cred => {
     console.log(cred.user) 
+        
+    // const myModal = document.querySelector('#modal-singup');
+    // // M.action_page.getInstance(myModal).hide();
+    // signupForm.reset();
+
         })
        
 });
