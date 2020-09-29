@@ -256,5 +256,16 @@ Miss Snowden solemnly read the concluding paragraph of the resolutions.
         </p>
       </footer>
       <script src="../scripts/auth.js"></script>
+      <script>function myFunction(x) {
+        if (x.matches) { // If media query matches
+          document.body.style.backgroundColor = "whait";
+        } else {
+          document.body.style.backgroundColor = "whait";
+        }
+      }
+      
+      var x = window.matchMedia("(max-width: 700px)")
+      myFunction(x) // Call listener function at run time
+      x.addListener(myFunction) // Attach listener function on state changes</script>
 </body>
 </html>
