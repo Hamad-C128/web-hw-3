@@ -10,14 +10,78 @@
     <link href="https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,300;1,400&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
     <title>Sfrti</title>
 
-    
+  
+
+
+
+
+<style>
+
+  .overlayb {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlayb-contentb {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .overlayb a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlayb a:hover, .overlayb a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlayb .closebtnb {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .overlayb a {font-size: 20px}
+    .overlayb .closebtnb {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+  }
+  
+
+   </style>
 </head>
 <body>
     <header class="header">
         <div class="row">
           <div class="col-4">
-            <a class="text-muted" href="#">Subscribe</a>
+            <a class="text-muted" href="#" onclick=" Subscrib()">Subscribe</a>
           </div>
+          <script>
+             function Subscrib() {
+                                 document.getElementById("myNav").innerHTML=alert(`You are now subscribed`);
+                                     }
+                                     
+          </script>
           <div class="logoposi">
             <a class="logeshkl" href="#">Sfrti</a>
           </div>
@@ -33,19 +97,57 @@
           
           <div id="popup1" class="overlay">
             <div class="popup">
-              <h2 style="color: rgb(0, 0, 0);">Search</h2>
+   
               <a class="close" href="#">&times;</a>
               <div class="content">
                 <form class="example" action="/action_page.php">
-                  <input type="text" placeholder="Search.." name="search">
-                  <button type="submit"><i class="fa fa-search"></i></button>
+                  <input height="100px" type="text" placeholder="Search.." name="search">
+                  
                 </form>
               </div>
             </div>
           </div>
 
-            <a id="#121" class="btn" href="./indexs.html">Sign up</a>
+            <a id="121" class="btn" href="./indexs.html">Login</a>
           
+
+
+
+
+                               
+                                                           
+                               <div id="myNav" class="overlayb">
+                                 <a href="javascript:void(0)" class="closebtnb" onclick="closeNav()">&times;</a>
+                                 <div class="overlayb-contentb">
+                                   <img style="border-radius: 50%; margin-top: -100px; margin-bottom: 30px;" src="./img/proflie.png">
+                                   <br>
+                                   <a id="emailUser" href="#">your email</a>
+                                   <br>
+                                   <a href="#">Your Reservations</a>
+                                   <br>
+                                   <a href="#">Technical support</a>
+                                   <br>
+                                   <a id="loguotTest" href="#">Log out of your account</a>
+                                   <br><br><br>
+                                 </div>
+                               </div>
+                               
+                               
+                               <span id="burger" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+                               
+                               <script>
+                               function openNav() {
+                                 document.getElementById("myNav").style.width = "100%";
+                               }
+                               
+                               function closeNav() {
+                                 document.getElementById("myNav").style.width = "0%";
+                                     }
+                                     </script> 
+                               
+                               
+
+
         </div>
         
       </header>
@@ -68,70 +170,53 @@
   </div>
 
 
-  <div class="display" >
-    <img class="mySlides"  src="./img/airplane.jpg" >
-    <img class="mySlides" src="./img/unnamed.jpg" >
-    <img class="mySlides" src="./img/air.jpg">
-         
-    <div class="display1" >
-      <div class="w3-left " onclick="plusDivs(-1)">&#10094;</div>
-      <div class="w3-right" onclick="plusDivs(1)">&#10095;</div>
-      <span class="w3-badge" onclick="currentDiv(1)"></span>
-      <span class="w3-badge" onclick="currentDiv(3)"></span>
-      <span class="w3-badge" onclick="currentDiv(2)"></span>
-    </div>
+  <div class="display" style="margin-left: 6%; margin-right: 6%;">
+    <img class="mySlides" src="./img/airplane.jpg" style="width:100%">
+    <img class="mySlides" src="./img/unnamed.jpg" style="width:100%">
+    <img class="mySlides" src="./img/air.jpg" style="width:100%">
   </div>
   <div class="world">  
-    <h1 style="font-size: 60px;">Sfrti</h1>
-    <p> Travel is the movement of people between distant <br> geographical locations. Travel can be done by foot, bicycle, <br> automobile, train, boat, bus, airplane, ship or other means,<br> with or without luggage, and can be one way or round trip</p>
+    <h1 style="font-size: 60px; margin-bottom: 30px;">Sfrti</h1>
+    <p style="margin-bottom: 40px;"> Travel is the movement of people between distant <br> geographical locations. Travel can be done by foot, bicycle, <br> automobile, train, boat, bus, airplane, ship or other means,<br> with or without luggage, and can be one way or round trip</p>
    <br> <a class="text-muted" href="https://mawdoo3.com/%D9%85%D9%88%D8%B6%D9%88%D8%B9_%D8%B9%D9%86_%D8%A7%D9%84%D8%B3%D9%81%D8%B1" style="color: white;"> Continue reading... </a>
-        </div> 
-  <script>
-    var slideIndex = 1;
-    showDivs(slideIndex);
-    
-    function plusDivs(n) {
-      showDivs(slideIndex += n);
-    }
-    
-    function currentDiv(n) {
-      showDivs(slideIndex = n);
-    }
-    
-    function showDivs(n) {
-      var i;
-      var x = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("demo");
-      if (n > x.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = x.length}
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";  
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" w3-left", "");
-      }
-      x[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += "w3-left";
-    }
-    </script>
-   
-<!--  -->
+        </div>  
+        <script>
+          var myIndex = 0;
+          carousel();
+          
+          function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";  
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 4000); // Change image every 2 seconds
+          }
+          </script>
 
-<div class="rowwq">
-    <div class="column">
-     <a href="./indexA.html" target="_blank" > <div class="card"><img class="iamges" src="./img/asi.jpg" > <div class="ttxxtt tswq"> <h1 >ASIA</h1> <br> <p class=" wtq">Asia is Earth's largest <br> and most populous continent, <br> located primarily in <br> the Eastern and Northern Hemispheres. <br> It shares the continental <br> landmass of Eurasia with  the continent of <br> Europe and the continental landmass of <br> Afro-Eurasia with both Europe and Africa. <br><br><br> <span   style="font-size: 13px; color: blue; margin-left: -10px;"> Click on the card to continue </span>  </p></div>  </div>
-     </a>
-    </div>
-    <div class="column wleft">
-        <a href="./indexU.html" target="_blank" > <div class="card"><img class="iamges" src="./img/urp.jpg" > <div class=" tswq"> <h1 class="tswq1">EUROPE</h1> <br> <p class="tswq1 wtq1">Europe is a continent <br> located entirely in the Northern <br> Hemisphere and mostly <br> in the Eastern Hemisphere. <br> It comprises the westernmost <br> part of Eurasia and is bordered by <br> the Arctic Ocean to the north, the Atlantic <br> Ocean to the west, the Mediterranean Sea <br> to the south, and Asia to the east. <br><br><br> <span style="font-size: 13px; color: blue;  margin-left: -10px"> Click on the card to continue </span></p> </div> </div>
-        </a>
-    </div>
-    <!-- <div class="haf">
-         <div class="card3"> </div>
-        </a>
-    </div> -->
-   
-  </div>
+
+<div class="holcrad">
+<div class="card">
+  <img class="iamges" src="./img/asi.jpg" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4 style="margin-top: -0px; font-size: 30px; margin-left: -20px;"><b>Asia</b></h4> 
+    <p class=" wtq"> Asia is Earth's largest  and most populous continent,  located primarily in  the Eastern and Northern Hemispheres.   </p> 
+   <a style=" text-decoration: none;" href="./indexA.html"> <p class="aaa">Lets go booking </p> 
+   </a></div>
+</div>
+<div style="margin-left: 35%;" class="card">
+  <img class="iamges" src="./img/urp.jpg" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4 style="margin-top: -0px; font-size: 30px; margin-left: -20px;"><b>EUROPE</b></h4> 
+    <p class=" wtq">Europe is a continent located entirely in the Northern  Hemisphere and mostly  in the Eastern Hemisphere.  </p> 
+   <a style=" text-decoration: none;" href="./indexU.html"> <p class="aaa">Lits go booking </p> 
+   </a></div>
+</div>
+</div>
+  
 
 
   
@@ -255,7 +340,6 @@ Miss Snowden solemnly read the concluding paragraph of the resolutions.
           <a href="#">Back to top</a>
         </p>
       </footer>
-      <script src="../scripts/auth.js"></script>
       <script>function myFunction(x) {
         if (x.matches) { // If media query matches
           document.body.style.backgroundColor = "whait";
@@ -267,5 +351,34 @@ Miss Snowden solemnly read the concluding paragraph of the resolutions.
       var x = window.matchMedia("(max-width: 700px)")
       myFunction(x) // Call listener function at run time
       x.addListener(myFunction) // Attach listener function on state changes</script>
+      
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBihi38sOV5GnWrq-vCdpPL4eYClPL52IM",
+    authDomain: "hsport.firebaseapp.com",
+    databaseURL: "https://hsport.firebaseio.com",
+    projectId: "hsport",
+    storageBucket: "hsport.appspot.com",
+    messagingSenderId: "798265000582",
+    appId: "1:798265000582:web:d7ff83ea185b97dc56c707"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  //str auth ref
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+    //
+   
+</script>
+<script src="../scripts/index.js"></script>
 </body>
 </html>

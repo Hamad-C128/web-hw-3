@@ -3,24 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" type="image/x-icon" href="./img/logo.png" />
     <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,300;1,400&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
     <title>Sfrti</title>
 
-    
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./style.css">
-        <link rel="shortcut icon" type="image/x-icon" href="./img/logo.png" />
-        <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,300;1,400&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
-        <title>Sfrti</title>
-    
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+
         
     </head>
     <body>
@@ -46,7 +39,8 @@
                   <div class="popup">
                     <h2 style="color: rgb(0, 0, 0);">Search</h2>
                     <a class="close" href="#">&times;</a>
-                    <div class="content">
+                    <div class="content3">
+
                       <form class="example" action="/action_page.php">
                         <input type="text" placeholder="Search.." name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
@@ -55,7 +49,7 @@
                   </div>
                 </div>
     
-                <a class="btn" href="./indexs.html">Sign up</a>
+                <a class="btn" href="./indexs.html">Login</a>
               
             </div>
             
@@ -77,12 +71,90 @@
       
         </nav>
       </div>
-              
-                <img  class="isgmg" src="./img/preview.jpg">
-              
-      <br><br><br><br><br>
-      <br><br><br><br><br>
-      <br><br><br><br><br>
+            
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+      <script>
+      $(window).scroll(function() {
+            var y = 0;
+            var scroll = $(window).scrollTop();
+            var win = $(window).height()
+            var height = $(".parallax").height();
+            var offset = $(".parallax").offset().top;
+            y = ((100 * scroll)/(height + win)) + ((100 * (win - offset))/(height + win));
+            if (y > 100){y = 100;}
+            else if (y < 0){y = 0;}
+            var out = String(y) + "%";
+            $(".parallax").css("background-position-y", out);
+      });
+      </script>
+      <div class="parallax ">
+      </div>
+
+      <section>
+  
+        <div class="module"><h1 style="font-size: 45px;">Welcome to Sfrati</h1></div>
+        <div class="module"><h2 style="font-size: 30px;">Place the mouse on the image of the country you want to go to</h2></div>
+        
+      
+      </section>
+      <script>
+        (function($) {
+
+/**
+ * Copyright 2012, Digital Fusion
+ * Licensed under the MIT license.
+ * http://teamdf.com/jquery-plugins/license/
+ *
+ * @author Sam Sehnert
+ * @desc A small plugin that checks whether elements are within
+ *     the user visible viewport of a web browser.
+ *     only accounts for vertical position, not horizontal.
+ */
+
+$.fn.visible = function(partial) {
+  
+    var $t            = $(this),
+        $w            = $(window),
+        viewTop       = $w.scrollTop(),
+        viewBottom    = viewTop + $w.height(),
+        _top          = $t.offset().top,
+        _bottom       = _top + $t.height(),
+        compareTop    = partial === true ? _bottom : _top,
+        compareBottom = partial === true ? _top : _bottom;
+  
+  return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+
+};
+  
+})(jQuery);
+
+var win = $(window);
+
+var allMods = $(".module");
+
+allMods.each(function(i, el) {
+var el = $(el);
+if (el.visible(true)) {
+  el.addClass("already-visible"); 
+} 
+});
+
+win.scroll(function(event) {
+
+allMods.each(function(i, el) {
+  var el = $(el);
+  if (el.visible(true)) {
+    el.addClass("come-in"); 
+  } 
+});
+
+});
+      </script>
+      
+      
+      <br><br><br>
       <div class="rtb">
      <div style="margin-left: 100px;">
       <div class="flip-card">
@@ -95,7 +167,7 @@
             <p style="margin-top: 45px;">one week</p> 
             
 
-            <button class="btnss21">Book</button>
+            <a class="btnss21" href="#popup2">Book</a>
           </div>
         </div>
       </div>
@@ -114,7 +186,7 @@
             <p style="margin-top: 45px;">tow day</p> 
             
 
-            <button class="btnss21">Book</button>
+            <a class="btnss21" href="#popup2">Book</a>
           </div>
         </div>
       </div>
@@ -133,118 +205,116 @@
             <p style="margin-top: 45px;">month</p> 
             
 
-            <button class="btnss21">Book</button>
+            <a class="btnss21" href="#popup2">Book</a>
           </div>
         </div>
       </div>
     </div>
 
   </div>
+            <div id="popup2" class="overlay3">
+              <div class="popup3">
+                <a class="close3" href="#">&times;</a>
+                <div class="content">
 
 
-
-            <!-- <a href="#popup1211z"> 
-            </a>
-          
-              
-              <div id="popup1211z" class="overlay">
-                <div class="popup">
-                  
-                  <a class="close" href="#">&times;</a>
-                  <div class="content">
-
-                    <form class="example" action="/action_page.php">
-                      <input type="text" placeholder="Search.." name="search">
-                      <button type="submit"><i class="fa fa-search"></i></button>
-                      <div class="row">
-                        <div class="col-75">
-                          <div class="container">
-                            <form action="/action_page.php">
-                      
-                              <div class="alrows">
-                                <div class="col-52">
-                                  <h3>Billing Address</h3>
-                                  <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                                  <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
-                                  <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                                  <input type="text" id="email" name="email" placeholder="john@example.com">
-                                  <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-                                  <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
-                                  <label for="city"><i class="fa fa-institution"></i> City</label>
-                                  <input type="text" id="city" name="city" placeholder="New York">
-                      
-                                  <div class="alrows">
-                                    <div class="col-52">
-                                      <label for="state">State</label>
-                                      <input type="text" id="state" name="state" placeholder="NY">
-                                    </div>
-                                    <div class="col-52">
-                                      <label for="zip">Zip</label>
-                                      <input type="text" id="zip" name="zip" placeholder="10001">
-                                    </div>
-                                  </div>
-                                </div>
-                      
-                                <div class="col-52">
-                                  <h3>Payment</h3>
-                                  <label for="fname">Accepted Cards</label>
-                                  <div class="icon-container">
-                                    <i class="fa fa-cc-visa" style="color:navy;"></i>
-                                    <i class="fa fa-cc-amex" style="color:blue;"></i>
-                                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                                    <i class="fa fa-cc-discover" style="color:orange;"></i>
-                                  </div>
-                                  <label for="cname">Name on Card</label>
-                                  <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-                                  <label for="ccnum">Credit card number</label>
-                                  <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-                                  <label for="expmonth">Exp Month</label>
-                                  <input type="text" id="expmonth" name="expmonth" placeholder="September">
-                      
-                                  <div class="alrows">
-                                    <div class="col-52">
-                                      <label for="expyear">Exp Year</label>
-                                      <input type="text" id="expyear" name="expyear" placeholder="2018">
-                                    </div>
-                                    <div class="col-52">
-                                      <label for="cvv">CVV</label>
-                                      <input type="text" id="cvv" name="cvv" placeholder="352">
-                                    </div>
-                                  </div>
-                                </div>
-                      
-                              </div>
-                              <label>
-                                <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-                              </label>
-                              <input type="submit" value="Continue to checkout" class="btnzza">
-                            </form>
+                  <div class="checkout-panel">
+                    <div class="panel-body">
+                      <h2 class="title">Checkout</h2>
+                   
+                      <div class="progress-bar">
+                        <div class="step active"></div>
+                        <div class="step active"></div>
+                        <div class="step"></div>
+                        <div class="step"></div>
+                      </div>
+                   
+                      <div class="payment-method">
+                        <label for="card" class="method cardzx">
+                          <div class="card-logos">
+                            <img style="width: 40px;" src="./img/vis.jpg"/>
+                            <img style="width: 40px;"  src="./img/mas.png"/>
                           </div>
+                   
+                          <div class="radio-input">
+                            <input id="card" type="radio" name="payment">
+                            Pay £340.00 with credit card
+                          </div>
+                        </label>
+                   
+                        <label for="paypal" class="method paypal">
+                          <img style="width: 40px;"  src="./img/pay.jpg"/>
+                          <div class="radio-input">
+                            <input id="paypal" type="radio" name="payment">
+                            Pay £340.00 with PayPal
+                          </div>
+                        </label>
+                      </div>
+                   
+                      <div class="input-fields">
+                        <div class="column-1">
+                          <label for="cardholder">Cardholder's Name</label>
+                          <input type="text" id="cardholder" />
+                   
+                          <div class="small-inputs">
+                            <div>
+                              <label for="date">Valid thru</label>
+                              <input type="text" id="date" placeholder="MM / YY" />
+                            </div>
+                   
+                            <div>
+                              <label for="verification">CVV</label>
+                              <input type="password" id="verification"/>
+                            </div>
+                          </div>
+                   
                         </div>
-                      
-                        <div class="col-2512">
-                          <div class="containerzza">
-                            <h4>Cart
-                              <span class="price" style="color:black">
-                                <i class="fa fa-shopping-cart"></i>
-                                <b>4</b>
-                              </span>
-                            </h4>
-                            <p><a href="#">Product 1</a> <span class="price">$15</span></p>
-                            <p><a href="#">Product 2</a> <span class="price">$5</span></p>
-                            <p><a href="#">Product 3</a> <span class="price">$8</span></p>
-                            <p><a href="#">Product 4</a> <span class="price">$2</span></p>
-                            <hr>
-                            <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
-                          </div>
+                        <div class="column-2">
+                          <label for="cardnumber">Card Number</label>
+                          <input type="password" id="cardnumber"/>
+                   
+                          <span class="info">* CVV or CVC is the card security code, unique three digits number on the back of your card separate from its number.</span>
                         </div>
                       </div>
-                    </form>
+                    </div>
+                   
+                    <div class="panel-footer">
+                      <button class="btnsasa back-btn">Back</button>
+                      <button class="btnsasa next-btn">Next Step</button>
+                    </div>
                   </div>
                 </div>
-              </div>  -->
-          
+              </div>
+            </div>
+      
+         
 
+ 
+
+ 
+          
+<script>var $cardInput = $('.input-fields input');
+ 
+  $('.next-btn').on('click', function(e) {
+   
+    $cardInput.removeClass('warning');
+   
+    $cardInput.each(function() {    
+       var $this = $(this);
+       if (!$this.val()) {
+         $this.addClass('warning');
+       }
+    })
+  });
+  $(document).ready(function() {
+ 
+ $('.method').on('click', function() {
+   $('.method').removeClass('blue-border');
+   $(this).addClass('blue-border');
+ });
+
+})
+  </script>
       <br><br><br><br><br>
       <br><br><br><br><br>
       

@@ -1,3 +1,17 @@
+//listen
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        console.log(`user logged in :` ,user)
+        // User is signed in.
+    } else {
+        console.log(`user logged out`)
+        // User is signed out.
+    }
+});
+
+
+
+
 //sign up
 const signupForm = document.querySelector('#action_page');
 document.querySelector('button').addEventListener('click', (e) => {
@@ -33,35 +47,26 @@ document.querySelector('button').addEventListener('click', (e) => {
 //     } 
 // } 
 
-// const logout = document.querySelector('#loguotTest');
-// logout.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     firebase.auth().signOut()
-//         .then(function () {
-//             // Sign-out successful.
-//             console.log('loged out successful')
-//         }).catch(function () {
-//             // An error happened.
-//             console.log('error')
-//         });
-// })
+// 
 
 // //log
 
  const loginForm = document.querySelector('#logein');
- document.querySelector('input').addEventListener('click', (e) => {
+ document.querySelector('#inputsa').addEventListener('click', (e) => {
      e.preventDefault();
 
-     //inf
+//      //inf
      const emaill = document.getElementById('username'); 
    const inputva = emaill.value;
 
    const passwordd = document.getElementById('password');
     const inputvla = passwordd.value;
-
-    firebase.auth().signInWithEmailAndPassword(inputva, inputvla).then(cred => {
-        console.log(cred.user)
-        // loginForm.reset();
-        })
+ 
+ firebase.auth().signInWithEmailAndPassword(inputva, inputvla).then(cred => {
+        
+    console.log(cred.user) 
+    alert(`done`);
+    window.location.href = "http://127.0.0.1:5500/puplic/index.html#";
+    const myModal = document.querySelector('#content');
+});
  })
-

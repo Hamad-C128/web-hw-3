@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="./img/logo.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,300;1,400&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
-    <title>Sfrti</title>
-
-    
+   
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -21,7 +10,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,300;1,400&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
         <title>Sfrti</title>
     
-        
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
     </head>
     <body>
         <header class="header">
@@ -54,7 +45,7 @@
                   </div>
                 </div>
     
-                <a class="btn" href="./indexs.html">Sign up</a>
+                <a class="btn" href="./indexs.html">Login</a>
               
             </div>
             
@@ -77,9 +68,248 @@
         </nav>
       </div>
     
-      <br><br><br><br><br>
-      <br><br><br><br><br>
-      <br><br><br><br><br>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+      <script>
+      $(window).scroll(function() {
+            var y = 0;
+            var scroll = $(window).scrollTop();
+            var win = $(window).height()
+            var height = $(".parallax").height();
+            var offset = $(".parallax").offset().top;
+            y = ((100 * scroll)/(height + win)) + ((100 * (win - offset))/(height + win));
+            if (y > 100){y = 100;}
+            else if (y < 0){y = 0;}
+            var out = String(y) + "%";
+            $(".parallax").css("background-position-y", out);
+      });
+      </script>
+      <div class="parallax ">
+      </div>
+
+      <section>
+  
+        <div class="module"><h1 style="font-size: 45px;">Wellcom to Sfrati</h1></div>
+        <div class="module"><h2 style="font-size: 30px;">Place the mouse on the image of the country you want to go to</h2></div>
+        
+      
+      </section>
+      <script>
+        (function($) {
+
+/**
+ * Copyright 2012, Digital Fusion
+ * Licensed under the MIT license.
+ * http://teamdf.com/jquery-plugins/license/
+ *
+ * @author Sam Sehnert
+ * @desc A small plugin that checks whether elements are within
+ *     the user visible viewport of a web browser.
+ *     only accounts for vertical position, not horizontal.
+ */
+
+$.fn.visible = function(partial) {
+  
+    var $t            = $(this),
+        $w            = $(window),
+        viewTop       = $w.scrollTop(),
+        viewBottom    = viewTop + $w.height(),
+        _top          = $t.offset().top,
+        _bottom       = _top + $t.height(),
+        compareTop    = partial === true ? _bottom : _top,
+        compareBottom = partial === true ? _top : _bottom;
+  
+  return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+
+};
+  
+})(jQuery);
+
+var win = $(window);
+
+var allMods = $(".module");
+
+allMods.each(function(i, el) {
+var el = $(el);
+if (el.visible(true)) {
+  el.addClass("already-visible"); 
+} 
+});
+
+win.scroll(function(event) {
+
+allMods.each(function(i, el) {
+  var el = $(el);
+  if (el.visible(true)) {
+    el.addClass("come-in"); 
+  } 
+});
+
+});
+      </script>
+      
+      
+      <br><br><br>
+      <div class="rtb">
+     <div style="margin-left: 100px;">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="./img/lan.jpg" alt="Avatar" style="width:300px;height:300px; border-radius: 50%;">
+          </div>
+          <div class="flip-card-back">
+            <h1 style="margin-top: 25px;">china</h1> 
+            <p style="margin-top: 45px;">one week</p> 
+            
+
+            <a class="btnss21" href="#popup2">Book</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div style="margin-left: 100px;">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="./img/fran.webp" alt="Avatar" style="width:300px;height:300px; border-radius: 50%;">
+          </div>
+          <div class="flip-card-back">
+            <h1 style="margin-top: 25px;">Jaban</h1> 
+            <p style="margin-top: 45px;">tow day</p> 
+            
+
+            <a class="btnss21" href="#popup2">Book</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div style="margin-left: 100px;">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="./img/germn.jpg" alt="Avatar" style="width:300px;height:300px; border-radius: 50%;">
+          </div>
+          <div class="flip-card-back">
+            <h1 style="margin-top: 25px;">kuwait</h1> 
+            <p style="margin-top: 45px;">month</p> 
+            
+
+            <a class="btnss21" href="#popup2">Book</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+            <div id="popup2" class="overlay3">
+              <div class="popup3">
+                <a class="close3" href="#">&times;</a>
+                <div class="content">
+
+
+                  <div class="checkout-panel">
+                    <div class="panel-body">
+                      <h2 class="title">Checkout</h2>
+                   
+                      <div class="progress-bar">
+                        <div class="step active"></div>
+                        <div class="step active"></div>
+                        <div class="step"></div>
+                        <div class="step"></div>
+                      </div>
+                   
+                      <div class="payment-method">
+                        <label for="card" class="method cardzx">
+                          <div class="card-logos">
+                            <img style="width: 40px;" src="./img/vis.jpg"/>
+                            <img style="width: 40px;"  src="./img/mas.png"/>
+                          </div>
+                   
+                          <div class="radio-input">
+                            <input id="card" type="radio" name="payment">
+                            Pay £340.00 with credit card
+                          </div>
+                        </label>
+                   
+                        <label for="paypal" class="method paypal">
+                          <img style="width: 40px;"  src="./img/pay.jpg"/>
+                          <div class="radio-input">
+                            <input id="paypal" type="radio" name="payment">
+                            Pay £340.00 with PayPal
+                          </div>
+                        </label>
+                      </div>
+                   
+                      <div class="input-fields">
+                        <div class="column-1">
+                          <label for="cardholder">Cardholder's Name</label>
+                          <input type="text" id="cardholder" />
+                   
+                          <div class="small-inputs">
+                            <div>
+                              <label for="date">Valid thru</label>
+                              <input type="text" id="date" placeholder="MM / YY" />
+                            </div>
+                   
+                            <div>
+                              <label for="verification">CVV</label>
+                              <input type="password" id="verification"/>
+                            </div>
+                          </div>
+                   
+                        </div>
+                        <div class="column-2">
+                          <label for="cardnumber">Card Number</label>
+                          <input type="password" id="cardnumber"/>
+                   
+                          <span class="info">* CVV or CVC is the card security code, unique three digits number on the back of your card separate from its number.</span>
+                        </div>
+                      </div>
+                    </div>
+                   
+                    <div class="panel-footer">
+                      <button class="btnsasa back-btn">Back</button>
+                      <button class="btnsasa next-btn">Next Step</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+         
+
+ 
+
+ 
+          
+<script>var $cardInput = $('.input-fields input');
+ 
+  $('.next-btn').on('click', function(e) {
+   
+    $cardInput.removeClass('warning');
+   
+    $cardInput.each(function() {    
+       var $this = $(this);
+       if (!$this.val()) {
+         $this.addClass('warning');
+       }
+    })
+  });
+  $(document).ready(function() {
+ 
+ $('.method').on('click', function() {
+   $('.method').removeClass('blue-border');
+   $(this).addClass('blue-border');
+ });
+
+})
+  </script>
       <br><br><br><br><br>
       <br><br><br><br><br>
       
@@ -87,7 +317,7 @@
             <p :last-child>This website is built to serve <a href="#">me</a> by <a href="https://twitter.com/alshamari__29" target="_blank">@Hamad</a>.</p>
             <p :last-child>
               <a href="#">Back to top</a>
-            </p> 
+            </p>
           </footer>
     </body>
     </html>
