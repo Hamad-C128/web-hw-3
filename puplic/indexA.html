@@ -10,50 +10,128 @@
     <link href="https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,300;1,400&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
     <title>Sfrti</title>
 
-    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+    
+<style>
 
-        
-    </head>
-    <body>
-        <header class="header">
-            <div class="row">
-              <div class="col-4">
-                <a class="text-muted" href="#">Subscribe</a>
-              </div>
-              <div class="logoposi">
-                <a class="logeshkl" href="./index.html">Sfrti</a>
-              </div>
-    
-    
-           
-              <a href="#popup1"> 
-                <div class="col-5">
-                    <svg class="text-muted"  aria-label="Search"  width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24" focusable="false"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"></circle><path d="M21 21l-5.2-5.2"></path></svg>
-                </div>
-              </a>
-            
-                
-                <div id="popup1" class="overlay">
-                  <div class="popup">
-                    <h2 style="color: rgb(0, 0, 0);">Search</h2>
-                    <a class="close" href="#">&times;</a>
-                    <div class="content3">
+  .overlayb {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlayb-contentb {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .overlayb a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlayb a:hover, .overlayb a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlayb .closebtnb {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .overlayb a {font-size: 20px}
+    .overlayb .closebtnb {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+  }
+  
 
-                      <form class="example" action="/action_page.php">
-                        <input type="text" placeholder="Search.." name="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-    
-                <a class="btn" href="./indexs.html">Login</a>
-              
+   </style>
+</head>
+<body>
+    <header class="header">
+        <div class="row">
+          <div class="col-4">
+            <a class="text-muted" href="#" onclick=" Subscrib()">Subscribe</a>
+          </div>
+          <script>
+             function Subscrib() {
+                                 document.getElementById("myNav").innerHTML=alert(`You are now subscribed`);
+                                     }
+                                     
+          </script>
+          <div class="logoposi">
+            <a class="logeshkl" href="./index.html">Sfrti</a>
+          </div>
+
+
+          <div class="containers2">
+            <div class="search-box">
+                <input type="text">
+              <span></span>
             </div>
-            
-          </header>
+        </div>
+            <a id="121" class="btn" href="./indexs.html">Login</a>
+          
+
+
+
+
+                               
+                                                           
+                               <div id="myNav" class="overlayb">
+                                 <a href="javascript:void(0)" class="closebtnb" onclick="closeNav()">&times;</a>
+                                 <div class="overlayb-contentb">
+                                   <img style="border-radius: 50%; margin-top: -100px; margin-bottom: 30px;" src="./img/proflie.png">
+                                   <br>
+                                   <a id="emailUser" href="#">your email</a>
+                                   <br>
+                                   <a href="#">Your Reservations</a>
+                                   <br>
+                                   <a href="#">Technical support</a>
+                                   <br>
+                                   <a id="loguotTest" href="#">Log out of your account</a>
+                                   <br><br><br>
+                                 </div>
+                               </div>
+                               
+                               
+                               <span id="burger" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+                               
+                               <script>
+                               function openNav() {
+                                 document.getElementById("myNav").style.width = "100%";
+                               }
+                               
+                               function closeNav() {
+                                 document.getElementById("myNav").style.width = "0%";
+                                     }
+                                     </script> 
+                               
+                               
+
+
+        </div>
+        
+      </header>
           <div class="nav-scroller">
         <nav>
             
@@ -324,5 +402,34 @@ allMods.each(function(i, el) {
               <a href="#">Back to top</a>
             </p>
           </footer>
+            
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBihi38sOV5GnWrq-vCdpPL4eYClPL52IM",
+    authDomain: "hsport.firebaseapp.com",
+    databaseURL: "https://hsport.firebaseio.com",
+    projectId: "hsport",
+    storageBucket: "hsport.appspot.com",
+    messagingSenderId: "798265000582",
+    appId: "1:798265000582:web:d7ff83ea185b97dc56c707"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  //str auth ref
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+    //
+   
+</script>
+<script src="../scripts/index.js"></script>
     </body>
     </html>
