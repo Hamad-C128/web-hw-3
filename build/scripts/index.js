@@ -1,4 +1,5 @@
-
+const email = document.getElementById('email'); 
+   const inputv = email.value;
 //listen
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
@@ -6,7 +7,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         document.getElementById("121").style.visibility = "hidden";
        
         var element = document.getElementById("emailUser");
-              element.innerHTML = user;
+              element.innerHTML = inputv;
         // User is signed in.
     } else {
         console.log(`user logged out`)
