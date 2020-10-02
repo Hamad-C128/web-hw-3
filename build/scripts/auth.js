@@ -66,7 +66,7 @@ document.querySelector('button').addEventListener('click', (e) => {
         
     console.log(cred.user) 
     alert(`done`);
-    window.location.href = "http://127.0.0.1:5500/puplic/index.html#";
+    window.location.href = "https://hsport.web.app/";
     const myModal = document.querySelector('#content');
 });
  })
